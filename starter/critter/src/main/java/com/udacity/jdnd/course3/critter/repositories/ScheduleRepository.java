@@ -8,9 +8,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface ScheduleRepository extends JpaRepository<Schedules, Long> {
-    List<Schedules> getAllByPetsContains(Pet Pet);
+    List<Schedules> findByPets(Pet Pet);
 
-    List<Schedules> getAllByEmployeesContains(Employee employee);
+    List<Schedules> findByEmployees(Employee employee);
 
-    List<Schedules> getAllByPetsIn(List<Pet> pets);
+    List<Schedules> findByPetsIn(List<Pet> pets);
 }

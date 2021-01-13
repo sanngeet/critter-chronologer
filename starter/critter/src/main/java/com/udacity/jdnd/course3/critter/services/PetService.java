@@ -32,7 +32,7 @@ public class PetService {
     }
 
     public List<Pet> getAllByCustomerId(long id) {
-        return petRepository.getAllByCustomerId(id);
+        return petRepository.getByCustomerId(id);
     }
 
     public List<Pet> getAllByPetIds(List<Long> petIds) {

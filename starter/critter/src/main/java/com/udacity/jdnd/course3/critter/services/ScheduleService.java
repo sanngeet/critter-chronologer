@@ -37,15 +37,15 @@ public class ScheduleService {
     }
 
     public List<Schedules> findByPetId(long petId) {
-        return scheduleRepository.getAllByPetsContains(petRepository.getOne(petId));
+        return scheduleRepository.findByPets(petRepository.getOne(petId));
     }
 
     public List<Schedules> findByEmployeeId(long employeeId) {
-        return scheduleRepository.getAllByEmployeesContains(employeeRepository.getOne(employeeId));
+        return scheduleRepository.findByEmployees(employeeRepository.getOne(employeeId));
     }
 
     public List<Schedules> findByCustomerId(long customerId) {
-        List<Pet> pets = petRepository.getAllByCustomerId(customerId);
-        return scheduleRepository.getAllByPetsIn(pets);
+        List<Pet> pets = petRepository.getByCustomerId(customerId);
+        return scheduleRepository.findByPetsIn(pets);
     }
 }

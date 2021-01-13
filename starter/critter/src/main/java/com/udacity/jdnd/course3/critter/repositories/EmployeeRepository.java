@@ -7,5 +7,5 @@ import java.time.DayOfWeek;
 import java.util.List;
 
 public interface EmployeeRepository extends JpaRepository<Employee, Long> {
-    List<Employee> getAllByDaysAvailable(DayOfWeek dayOfWeek);
+    List<Employee> getByDaysAvailable(DayOfWeek dayOfWeek);
 }
